@@ -10,35 +10,6 @@
 <img src="img/colorpicker.gif" alt="блямба"></img><div style="clear:both;"></div>
 <canvas id="clockCanvas" width="600" height="600"></canvas>
 
-<script type="text/javascript">
-var ctx=clockCanvas.getContext("2d");
-ctx.beginPath();
-ctx.arc(300,300,300,0,2*Math.PI);
-ctx.arc(300,300,295,0,2*Math.PI);
-
-ctx.stroke();
-
-ctx.font="30px Verdana";
-// Create gradient
-var gradient=ctx.createLinearGradient(0,0,clockCanvas.width,0);
-gradient.addColorStop("0","magenta");
-gradient.addColorStop("0.5","blue");
-gradient.addColorStop("1.0","red");
-// Fill with gradient
-ctx.fillStyle=gradient;
-var cornerHour = Math.PI/6;
-var centerX = 300;
-var centerY = 300;
-var dialRadius = 265;
-for (var hours=1; hours<=12; hours++) {
-  var currentHourCorner = hours*cornerHour; 
-  var measureOfTheCipher = ctx.measureText(hours).width;
-  var currentCoordX = centerX - measureOfTheCipher / 2 + dialRadius* Math.sin(currentHourCorner);
-  var currentCoordY = centerY + 15 - dialRadius* Math.cos(currentHourCorner);
-   ctx.fillText(hours, currentCoordX, currentCoordY);
-}
-
-
-</script>
+<script src="js/clock.js"></script>
 </body>
 </html>
