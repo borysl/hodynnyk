@@ -6,6 +6,7 @@
   "scripts": {
     "test": "chrome index.html",
     "min": "node .build/build.js",
+    "dup": "jsinspect -t 5 ./js/clock.js",
     "start": "chrome index.html"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
+    "jsinspect": "^0.8.0",
     "node-minify": "^2.0.2"
   }
 }
