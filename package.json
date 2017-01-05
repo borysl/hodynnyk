@@ -4,7 +4,8 @@
   "description": "Small application for my son",
   "main": "index.js",
   "scripts": {
-    "test": "chrome index.html"
+    "test": "chrome index.html",
+    "compile": "npm .build/build.js compile"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/borysl/hodynnyk/issues"
   },
-  "homepage": "https://github.com/borysl/hodynnyk#readme"
+  "homepage": "https://github.com/borysl/hodynnyk#readme",
+  "devDependencies": {
+    "node-minify": "^2.0.2"
+  }
 }
