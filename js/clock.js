@@ -57,18 +57,22 @@ function drawDial (canvas) {
   }
 }
 
+function drawArrow (canvas, length, width, angle) {
+  var ctx = canvas.getContext('2d')
+  ctx.beginPath()
+  ctx.lineWidth = width
+  ctx.moveTo(centerX, centerY)
+  ctx.lineTo(centerX + length * Math.sin(angle), centerY - length * Math.cos(angle))
+  ctx.stroke()
+}
+
 function drawHourArrow (canvas, dateTime) {
   var totalSecondsInADay = 3600 * 12
   var secondSinceMidTime = dateTime.getSeconds() + 60 * dateTime.getMinutes() + 3600 * (dateTime.getHours() % 12)
 
   var hourArrowInclinationAngle = secondSinceMidTime / totalSecondsInADay * 2 * Math.PI
 
-  var ctx = canvas.getContext('2d')
-  ctx.beginPath()
-  ctx.moveTo(centerX, centerY)
-  ctx.lineWidth = 7
-  ctx.lineTo(centerX + hourArrowLength * Math.sin(hourArrowInclinationAngle), centerY - hourArrowLength * Math.cos(hourArrowInclinationAngle))
-  ctx.stroke()
+  drawArrow(canvas, hourArrowLength, 7, hourArrowInclinationAngle)
 }
 
 function drawMinuteArrow (canvas, dateTime) {
@@ -77,24 +81,14 @@ function drawMinuteArrow (canvas, dateTime) {
 
   var minuteArrowInclinationAngle = secondSinceMidTime / totalSecondsInAnHour * 2 * Math.PI
 
-  var ctx = canvas.getContext('2d')
-  ctx.beginPath()
-  ctx.lineWidth = 5
-  ctx.moveTo(centerX, centerY)
-  ctx.lineTo(centerX + minuteArrowLength * Math.sin(minuteArrowInclinationAngle), centerY - minuteArrowLength * Math.cos(minuteArrowInclinationAngle))
-  ctx.stroke()
+  drawArrow(canvas, minuteArrowLength, 5, minuteArrowInclinationAngle)
 }
 
 function drawSecondsArrow (canvas, dateTime) {
   var totalSecondsInAMinute = 60
   var secondSinceMidTime = dateTime.getSeconds()
 
-  var minuteArrowInclinationAngle = secondSinceMidTime / totalSecondsInAMinute * 2 * Math.PI
+  var secondArrowInclinationAngle = secondSinceMidTime / totalSecondsInAMinute * 2 * Math.PI
 
-  var ctx = canvas.getContext('2d')
-  ctx.beginPath()
-  ctx.lineWidth = 1
-  ctx.moveTo(centerX, centerY)
-  ctx.lineTo(centerX + secondsArrowLength * Math.sin(minuteArrowInclinationAngle), centerY - secondsArrowLength * Math.cos(minuteArrowInclinationAngle))
-  ctx.stroke()
+  drawArrow(canvas, secondsArrowLength, 1, secondArrowInclinationAngle)
 }

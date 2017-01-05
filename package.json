@@ -6,7 +6,7 @@
   "scripts": {
     "test": "chrome index.html",
     "min": "node .build/build.js",
-    "dup": "jsinspect -t 5 ./js/clock.js",
+    "dup": "jsinspect ./js/clock.js",
     "start": "chrome index.html"
   },
   "repository": {
