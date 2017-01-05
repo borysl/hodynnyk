@@ -1,0 +1,24 @@
+{
+  "name": "hodynnyk-for-liova",
+  "version": "1.0.0",
+  "description": "Small application for my son",
+  "main": "index.js",
+  "scripts": {
+    "test": "chrome index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borysl/hodynnyk.git"
+  },
+  "keywords": [
+    "clock",
+    "canvas",
+    "javascript"
+  ],
+  "author": "Borys Lebeda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/borysl/hodynnyk/issues"
+  },
+  "homepage": "https://github.com/borysl/hodynnyk#readme"
+}
