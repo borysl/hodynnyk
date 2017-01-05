@@ -1,2 +1,6 @@
 node_modules/.bin/babylon
 node_modules
+*.bak
+clock_gcc.js
+clock_ujs.js
+clock_ujs_promis.js

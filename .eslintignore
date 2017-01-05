@@ -1,0 +1,3 @@
+#I need somehow force eslint not ignore .build/build.js 
+# Looks like .build is ignore along with node_modules and bower_modules 
+!.build/build.js
